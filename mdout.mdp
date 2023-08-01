@@ -1,17 +1,17 @@
 ;
 ;	File 'mdout.mdp' was generated
-;	By user: root (501)
-;	On host: Teal.local
-;	At date: Tue Aug  1 16:10:11 2023
+;	By user: alexi (1000)
+;	On host: Celeste
+;	At date: Tue Aug  1 18:30:00 2023
 ;
 ;	Created by:
 ;	                     :-) GROMACS - gmx grompp, 2023.2 (-:
 ;	
 ;	Executable:   /usr/local/gromacs/bin/gmx
 ;	Data prefix:  /usr/local/gromacs
-;	Working dir:  /Users/alexi/Library/CloudStorage/OneDrive-Nexus365/Rotation_Projects/Rotation_2/Project/SBL_MD_CovDock
+;	Working dir:  /home/alexi/Documents/SBL_MD_CovDock
 ;	Command line:
-;	  gmx grompp -f config/minim.mdp -c prod_structures/APO/APO_6T3D_solv_ion.gro -p prod_structures/APO/APO_6T3D.top -o prod_structures/APO/APO_6T3D_min.tpr
+;	  gmx grompp -f config/minim.mdp -c prod_structures/APO/APO_1K55_solv_ion.gro -p prod_structures/APO/APO_1K55.top -o prod_structures/APO/APO_1K55_min.tpr
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -171,7 +171,7 @@ annealing-temp           =
 ; GENERATE VELOCITIES FOR STARTUP RUN
 gen-vel                  = no
 gen-temp                 = 300
-gen-seed                 = 2143203707
+gen-seed                 = 1870659579
 
 ; OPTIONS FOR BONDS    
 constraints              = none
