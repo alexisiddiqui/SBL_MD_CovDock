@@ -1,0 +1,40 @@
+
+; KCXparams_GMX.top created by acpype (v: 2022.6.6) on Mon Jul 31 16:33:17 2023
+
+
+
+[ defaults ]
+
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+
+1               2               yes             0.5     0.8333333333
+
+
+
+; Include KCXparams.itp topology
+
+#include "KCXparams.itp"
+
+
+
+; Ligand position restraints
+
+#ifdef POSRES_LIG
+
+#include "posre_KCXparams.itp"
+
+#endif
+
+
+
+[ system ]
+
+ KCXparams
+
+
+
+[ molecules ]
+
+; Compound        nmols
+
+ KCXparams 1     

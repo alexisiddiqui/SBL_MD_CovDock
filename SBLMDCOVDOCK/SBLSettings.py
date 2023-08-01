@@ -18,7 +18,7 @@ class Settings:
         self.data_directory = 'data'
         self.structures_input = "start_structures"
         self.structures_output = "prod_structures"
-
+        self.config = 'config'
 
 # inhrerit from Settings
 class GROMACS_Settings(Settings):
