@@ -19,6 +19,7 @@ class Settings:
         self.structures_input = "start_structures"
         self.structures_output = "prod_structures"
         self.config = 'config'
+        self.pH = 7.4
 
 # inhrerit from Settings
 class GROMACS_Settings(Settings):

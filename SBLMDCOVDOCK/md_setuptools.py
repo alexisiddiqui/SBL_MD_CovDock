@@ -28,3 +28,29 @@ def parse_propka_output(pka_file, pH=7.4):
                 # protonation_states = pd.DataFrame.from_dict(protonation_states, orient="index")
 
     return protonation_states
+
+def rename_KCX(input_path):
+    with open(input_path, "r") as f:
+        lines = f.readlines()
+    
+    for idx,line in enumerate(lines):
+        # print(line)
+        split = line.split(' ')
+        # remove empty strings
+        split = list(filter(None, split))
+        # print(line)
+        try:
+            if split[3] == "KCX":
+                # print(line)
+                lines[idx] = line.replace("HETATM", "ATOM  ")
+                print("changed", idx, line[:30])
+        except:
+            pass
+        # print(line)
+
+    output_path = input_path.replace(".pdb", "_atom.pdb")
+
+    with open(output_path, "w+") as f:
+        f.writelines(lines)
+
+    print("Wrote to", output_path)
