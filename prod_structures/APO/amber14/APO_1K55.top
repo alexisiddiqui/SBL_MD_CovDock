@@ -14,6 +14,10 @@
 ;     /Users/alexi/miniconda/envs/RIN_test/lib/python3.8/site-packages/ipykernel_launcher.py --ip=127.0.0.1 --stdin=9011 --control=9009 --hb=9008 --Session.signature_scheme="hmac-sha256" --Session.key=b"f47cf9a1-fade-43c5-a788-1bfd40f23dea" --shell=9010 --transport="tcp" --iopub=9012 --f=/Users/alexi/Library/Jupyter/runtime/kernel-v2-77476dBGBZFKUtqRY.json
 ;
 
+; Include forcefield parameters
+#include "./amber14sb.ff/forcefield.itp"
+
+
 [ defaults ]
 ; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
 1               2               yes             0.5          0.83333333  
@@ -42728,6 +42732,26 @@ system1          3
    3823   3827   3825   3826     4  180.0000771  4.6024000  2
    3842   3846   3844   3845     4  180.0000771  4.6024000  2
    3861   3865   3863   3864     4  180.0000771  4.6024000  2
+
+; Include Position restraint file
+#ifdef POSRES
+#include "APO_1K55.itp"
+#endif
+
+; Include water topology
+#include "./amber14sb.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "./amber14sb.ff/ions.itp"
+
+
 
 [ system ]
 ; Name
