@@ -1,6 +1,7 @@
 
 import os
 from abc import ABC, abstractmethod
+from SBLMDCOVDOCK.SBLSettings import Settings
 
 ### Abstract method for the MD and Docking experiment classes
 
@@ -11,33 +12,48 @@ class Experiment(ABC):
     This class will handle some of the folder checking as well as the settings used for the run.
     
     """    
-    def __init__(self,settings, name=None):
+    def __init__(self,settings: Settings, name=None):
         super.__init__()
         self.settings = settings
-        self.name = name
+        if name is not None
+            self.name = name
+        else:
+            self.name = settings.trial_name
 
-        
+    def create_directory_structure(self):
+        dirs_to_join = [self.settings.data_directory, 
+                        self.settings.parent,
+                        self.settings.pdbcode, 
+                        self.settings.trial_name]
+        self.data_directory = os.path.join(*dirs_to_join)
+
+        if self.check_trial_directory():
+            self.create_trial_directory()
+        else:
+            raise ValueError("Trial directory already exists")
+
 
     def check_trial_directory(self):
         """
-        Checks if the trial directory exists. If not, it creates it.
-        Otherwise it changes the trial name to a new one and checks again.
+        Checks if the trial directory exists. If not, returns True.
         """
-        pass
+        if os.path.exists(self.data_directory):
+            return False
+        else:
+            return True
+        
 
-
-    @abstractmethod
     def create_trial_directory(self):
         """
-        Creates the trial directory.
+        Creates the trial directory. And replicate directories
         """
-        pass
-    @abstractmethod
-    def create_directory_structure(self):
-        """
-        Creates the directory structure for the trial.
-        """
-        pass
+
+        dirs_to_create = self.settings.trial_dirs.append([self.settings.rep_directory +
+                                                        str(i) for i in range(self.settings.replicates)])
+
+        for directory in dirs_to_create:
+            os.makedirs(os.path.join(self.data_directory, directory))
+        
     @abstractmethod
     def prepare_config(self):
         """
@@ -69,3 +85,5 @@ class Experiment(ABC):
         Loads the settings of the experiment from a pickle file.
         """
         pass
+
+    def 
