@@ -1,8 +1,8 @@
-source leaprc.protein.ff19SB
+source leaprc.protein.ff14SB
 set default PBRadii mbondi3
 loadAmberPrep KCX.prepin
 loadAmberParams frcmod2.KCX
 loadAmberParams frcmod1.KCX
-x = loadPDB 1K55_4amber.pdb
-saveAmberParm x 1K55_4amber_ante.parm7 1K55_4amber_ante.rst7
+x = loadPDB APO_1K55_4amber.pdb
+saveAmberParm x APO_1K55_4amber_ante.parm7 APO_1K55_4amber_ante.rst7
 quit
