@@ -1,8 +1,8 @@
 ;
 ;	File 'mdout.mdp' was generated
 ;	By user: root (501)
-;	On host: Teal.local
-;	At date: Wed Aug  9 22:56:36 2023
+;	On host: ptcl-dhcp068.chem.ox.ac.uk
+;	At date: Thu Aug 10 11:27:23 2023
 ;
 ;	Created by:
 ;	                     :-) GROMACS - gmx grompp, 2023.2 (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /usr/local/gromacs
 ;	Working dir:  /Users/alexi/Library/CloudStorage/OneDrive-Nexus365/Rotation_Projects/Rotation_2/Project/SBL_MD_CovDock
 ;	Command line:
-;	  gmx grompp -f config/ions.mdp -c prod_structures/APO/amber14/APO_6T3D_solv.gro -p prod_structures/APO/amber14/APO_6T3D.top -o prod_structures/APO/amber14/APO_6T3D_solv.tpr
+;	  gmx grompp -f config/minim.mdp -c prod_structures/APO/amber14/APO_6T3D_solv_ion.gro -p prod_structures/APO/amber14/APO_6T3D.top -o prod_structures/APO/amber14/APO_6T3D_min.tpr
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -95,7 +95,7 @@ rlist                    = 1
 
 ; OPTIONS FOR ELECTROSTATICS AND VDW
 ; Method for doing electrostatics
-coulombtype              = cutoff
+coulombtype              = PME
 coulomb-modifier         = Potential-shift-Verlet
 rcoulomb-switch          = 0
 rcoulomb                 = 1.0
@@ -171,7 +171,7 @@ annealing-temp           =
 ; GENERATE VELOCITIES FOR STARTUP RUN
 gen-vel                  = no
 gen-temp                 = 300
-gen-seed                 = -655365
+gen-seed                 = -943742991
 
 ; OPTIONS FOR BONDS    
 constraints              = none
