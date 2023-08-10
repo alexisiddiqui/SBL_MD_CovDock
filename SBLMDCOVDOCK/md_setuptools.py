@@ -1,6 +1,12 @@
 # File for MD tools
 
 from pdbtools import *
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+import subprocess
+
+
 
 def parse_propka_output(pka_file, pH=7.4):
     # Initialize the dictionary to store the protonation states
@@ -54,3 +60,27 @@ def rename_KCX(input_path):
         f.writelines(lines)
 
     print("Wrote to", output_path)
+
+def plot_xvg(filename):
+    # Read the file and get lines
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+
+    # Extract labels and units from the file
+    x_label = [line.split('"')[1] for line in lines if '@    xaxis  label' in line][0]
+    y_label = [line.split('"')[1] for line in lines if '@    yaxis  label' in line][0]
+    title = filename.split("/")[-1].replace(".xvg", "") + " " + [line.split('"')[1] for line in lines if '@    title' in line][0]
+    # Read the data, skipping comment lines starting with '#', '@', or '&'
+    data = pd.read_csv(filename, comment='@', skiprows=24, delim_whitespace=True, names=['x', 'y'], header=None)
+
+    # Plot the data
+    plt.figure(figsize=(10, 6))
+    plt.plot(data['x'], data['y'])
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.grid(True)
+    plt.show()
+
+# Call the function with the provided file
+
