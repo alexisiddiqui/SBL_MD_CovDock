@@ -1,6 +1,6 @@
 # File for MD tools
 
-from pdbtools import *
+# from pdbtools import *
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
