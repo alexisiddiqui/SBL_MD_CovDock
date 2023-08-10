@@ -69,3 +69,17 @@ class DOCKING_Settings(Settings):
         self.structures_input = os.path.join(self.structures_input,"Ligand_Substrate")
         self.structures_output = os.path.join(self.structures_output,"Ligand_Substrate")
         self.parent = "Dock"
+
+
+# fprint_calculator.py
+
+fprint_params = {'bits': 4096, 'radius_multiplier': 1.5, 'rdkit_invariants': True}
+
+confgen_params = {'max_energy_diff': 20.0, 'first': 1}
+
+
+def calculate_fprint(row_dict, confgen_params, fprint_params):
+    smiles = row_dict['SMILES']
+    name = row_dict['Ligands']
+    fprint = fprints_from_smiles(smiles, name, confgen_params=confgen_params, fprint_params=fprint_params)
+    return fprint
