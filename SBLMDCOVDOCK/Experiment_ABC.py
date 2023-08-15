@@ -25,6 +25,14 @@ class Experiment(ABC):
             self.name = self.settings.trial_name
 
         self.dataframe  = pd.DataFrame()
+        self.dirs = {
+            self.settings.temporary_directory: None,
+            self.settings.data_directory: None,
+            self.settings.logs_directory: None,
+            self.settings.viz : None,
+            self.settings.ana: None,
+        }
+
 
     @abstractmethod
     def check_args(self):
@@ -77,8 +85,11 @@ class Experiment(ABC):
                             self.settings.pdbcode, 
                             trial_name]
             trial_dir = os.path.join(*dirs_to_join)
+
+            self.dirs[dir] = trial_dir
             
             os.makedirs(trial_dir, exist_ok=True)
+
         
     @abstractmethod
     def prepare_config(self):

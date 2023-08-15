@@ -65,9 +65,12 @@ class GROMACS_Settings(Settings):
         self.parent = "MD"
         self.suffix = "MD"
         self.traj_extension = "gro"
-        self.pbc_commands = [("-pbc", "mol"), ("-pbc", "nojump")]
+        self.pbc_commands = [("-pbc", "mol", "-center"), ("-pbc", "nojump")]
         self.pbc_extensions = [ext[1] for ext in self.pbc_commands]
-
+        self.environ_path = os.getcwd()
+        self.environ = "GMXLIB"
+        self.gmx = ("gmx","gmx_mpi")
+        self.gmx_mpi_on = True
 
 class DOCKING_Settings(Settings):
     "Represents the settings for a given run of Docking"
