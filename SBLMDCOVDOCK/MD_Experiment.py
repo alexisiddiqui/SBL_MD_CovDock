@@ -165,17 +165,17 @@ class MD_Experiment(Experiment):
         Converts the trajectory file to correct for pbc.
         Returns the corrected trajectory file name.
         """
-        traj_file1 = traj_file.split(".")[-2] + self.settings.pbc_extensions[0] + ".xtc"
-        traj_file2 = traj_file.split(".")[-2] + self.settings.pbc_extensions[1] + ".xtc"
+        traj_file1 = tpr_path.split(".")[-2] + self.settings.pbc_extensions[0] + ".xtc"
+        traj_file2 = tpr_path.split(".")[-2] + self.settings.pbc_extensions[1] + ".xtc"
         
         trjconv_command1 = ["gmx", "trjconv",
-                             "-f", traj_file, 
+                             "-f", traj_file1, 
                              "-s", tpr_path, 
                              self.settings.pbc_commands[0], 
                              "-o", traj_file1]
         
         trjconv_command2 = ["gmx", "trjconv", 
-                             "-f", traj_file, 
+                             "-f", traj_file2, 
                              "-s", tpr_path, 
                              self.settings.pbc_commands[1], 
                              "-o", traj_file2]
@@ -264,13 +264,12 @@ class MD_Experiment(Experiment):
         This will prepare the analysis for the trial.
         """
         return self.pbc_conversion(tpr_path)
-
-    def run_analysis(self, traj_file=None):x
+### TODO create analysis commands - add data to the dataframe
+    def run_analysis(self, traj_file=None):
         ### This will take args from settings for what analyses to run
         # for now we just convert to pdb
         #if traj file is not given try to rebuild name
         if traj_file is None:
-
             tpr_name = "_".join([self.settings.suffix, 
                                 self.settings.pdbcode, 
                                 self.traj_no]) + ".tpr"
@@ -279,10 +278,11 @@ class MD_Experiment(Experiment):
                                     tpr_name)
             traj_file = tpr_path.replace(".tpr", ".xtc")
             traj_file = traj_file.split(".")[-2] + self.settings.pbc_extensions[1] + ".xtc"
-
-
-        pdb_name = tpr_name.replace(".tpr", ".pdb")
+            pdb_name = tpr_name.replace(".tpr", ".pdb")
+        else:
+            pdb_name = traj_file.replace(".xtc", ".pdb")
         pdb_path = os.path.join(self.dirs[self.settings.viz], pdb_name)
+        
 
         pdbout_command = ["gmx", "trjconv", 
                             "-f", traj_file,
@@ -291,7 +291,6 @@ class MD_Experiment(Experiment):
         
         subprocess.run(pdbout_command, input=b"1\n", check=True)
         print("Saved pdb file to: ", pdb_path)
-
 
 
 
