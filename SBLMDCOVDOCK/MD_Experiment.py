@@ -1,18 +1,88 @@
 import os
+import glob
+import shutil
 from abc import ABC, abstractmethod
-
+import pandas as pd
+import argparse
+import time
+import pickle
 from SBLMDCOVDOCK.Experiment_ABC import Experiment
 from SBLMDCOVDOCK.SBLSettings import GROMACS_Settings
-
-
 
 class MD_Experiment(Experiment):
     def __init__(self,settings: GROMACS_Settings, name=None):
         super(MD_Experiment).__init__(settings, name)
         self.trajectories = {}
-        self.replicate = 0
-        self.traj_no = 0
+        self.rep_no : int = None
+        self.traj_no : int = 0
+        self.args = self.check_args()
+        self.config_files = []
+        self.topology_files = []
 
+    
+    def check_args(self):
+        """
+        Checks the arguments for the trial.
+        """
+        parser = argparse.ArgumentParser()
+
+        parser.add_argument("-R", "--replicate", 
+                            dest="replicate",
+                            help="Replicate number", type=int,
+                            default=0)
+        
+        ### TODO setup traj continuation
+        # parser.add_argument("-T", "--trajectory", 
+        #                     dest="traj_no", 
+        #                     help="Trajectory number", type=int)
+                            
+        
+        parser.add_argument("-P", "--pdbcode", 
+                            dest="pdbcode", 
+                            help="PDB code", type=str)
+        
+        parser.add_argument("-N", "--name",
+                            dest="name",
+                            help="Name of the trial", type=str)
+        
+        parser.add_argument("-S", "--suffix",
+                            dest="suffix",
+                            help="Suffix for the trajectory files", type=str)
+
+
+        args = parser.parse_args()
+
+        if args.replicate is not None:
+            self.rep_no = args.replicate
+
+        if args.traj_no is not None:
+            self.traj_no = args.traj_no
+
+        if args.pdbcode is not None:
+            self.settings.pdbcode = args.pdbcode
+
+        if args.name is not None:
+            self.name = args.name
+        
+        if args.suffix is not None:
+            self.settings.suffix = args.suffix
+
+    def create_directories(self):
+        # we are using the ABC method here
+        super().create_directories()
+        # then we can create the MD specific directories
+        rep_dirs = [self.settings.rep_directory + 
+                          str(i) for i in range(self.settings.replicates)]
+
+        trial_name = self.name
+        dirs_to_join = [self.settings.data_directory, 
+                        self.settings.parent,
+                        self.settings.pdbcode, 
+                        trial_name]
+        trial_dir = os.path.join(*dirs_to_join)
+
+        for directory in rep_dirs:
+            os.makedirs(trial_dir, directory)
 
     def prepare_config(self, file_names=None):
         """
@@ -23,9 +93,9 @@ class MD_Experiment(Experiment):
         if file_names is not None:
             config_files = file_names
 
+        self.config_files = config_files
         print("Loading config files: ", config_files)
 
-    
     def prepare_input_files(self, suffix=None, file_names=None):
         """
         Prepares the topology files for the trial.
@@ -39,19 +109,20 @@ class MD_Experiment(Experiment):
         if suffix is not None:
             topology_files = [file 
                               for file in topology_files 
-                              if file.split(".")[-2].endswith(suffix)]
+                              if file.split(".")[-2].contains(suffix)]
             
         if file_names is not None:
             topology_files = file_names
         
+        self.topology_files = topology_files
         print("Loading topology files: ", topology_files)
 
-    def check_trajectory_files(self, data_dir=None, traj_extension=None):
+### This is mostly to check remote directories: return to this later.
+    def check_all_trajectory_files(self, data_dir=None, traj_extension=None):
         """
         Checks if the trajectory files exist. For a given trial goes into each replicate and checks for file with the correct extension.
         Adds the name to the trajectories dictionary. If a data dir is given, it will check it.
         """
-
         if data_dir is None:
             data_dir = self.settings.data_directory
 
@@ -62,18 +133,26 @@ class MD_Experiment(Experiment):
                     self.trajectories[rep].append(file)
 
         return self.trajectories
-    ### TODO
+    
+### TODO Check the commands to do this correctly
     def pbc_conversion(self, traj_file):
         """
         Converts the trajectory file to correct for pbc.
         """
-        trjconv_command1 = ["gmx", "trjconv", "-f", traj_file, "-s", self.settings.topology, "-pbc", "mol", "-o", traj_file.split(".")[0] + "_pbc.xtc"]
-        trjconv_command2 = ["gmx", "trjconv", "-f", traj_file.split(".")[0] + "_pbc.xtc", "-s", self.settings.topology, "-pbc", "nojump", "-o", traj_file.split(".")[0] + "_pbc_nojump.xtc"]
+        trjconv_command1 = ["gmx", "trjconv",
+                             "-f", traj_file, 
+                             "-s", self.settings.topology, 
+                             self.settings.pbc_commands[0], 
+                             "-o", traj_file.split(".")[0] + self.settings.pbc_extensions[0] + ".xtc"]
+        
+        trjconv_command2 = ["gmx", "trjconv", 
+                             "-f", traj_file.split(".")[0] + ".xtc", 
+                             "-s", self.settings.topology, 
+                             self.settings.pbc_commands[1], 
+                             "-o", traj_file.split(".")[0] + self.settings.pbc_extensions[1] + ".xtc"]
 
-        pass
-    
 
-    ### TODO
+### TODO later: This is for loading remote trajectories into local folder
     def load_trajectory_files(self, data_dir=None):
         """
         This is for syncing the trajectory files to the current experiment.
@@ -86,63 +165,99 @@ class MD_Experiment(Experiment):
 
         ### One function for remote copy
 
-    ### TODO
     def prepare_simulation(self):
         """
         This will prepare the simulation for the trial.
         """
-        
         self.prepare_config()
         self.prepare_input_files()
         self.load_input_files()
-        self.load_config_files()
-  
+
+    def run_MD_step(self):
+        """
+        This will run a step of MD for the trial.
+        """
+        grompp_command = ["gmx", "grompp",
+        ]
+        mdrun_command = ["gmx", "mdrun",
+        ]
+
+        self.set_trajectory_number()
+
+
+    def run_experiment(self):
+        """
+        This will run the experiment for the trial.
+        """
+        self.prepare_simulation()
+        self.run_MD_step()
+        self.prepare_analysis()
+        self.run_analysis()
+
+### TODO sort out the trajfile naming
     def prepare_analysis(self):
         """
         This will prepare the analysis for the trial.
         """
-        self.pbc_conversion()
+
+        self.pbc_conversion(traj_file=)
+
+    def run_analysis(self):
+        ### This will take args from settings for what analyses to run
+        # for now we just convert to pbc
+
+
+        pdbout_command = ["gmx", "trjconv", 
+                            ]
 
 
 
-    def load_input_files(self):
+
+    def load_input_files(self, rep=None):
         """
         Copies the topology files for the trial.
         Files must be local.
         """
+        if rep is None:
+            rep = self.rep_no
 
-        pass
-
-    def load_config_files(self):
-        """
-        Copies the config files for the trial.
-        Files must be local.
-        """
-        pass
-        
+        for file in self.topology_files:
+            file_path = os.path.join(self.settings.topology, file)
+            destination = os.path.join(self.settings.data_directory, 
+                                       self.settings.parent,
+                                       self.settings.pdbcode, 
+                                       self.name,
+                                       self.settings.rep_directory + str(rep),
+                                       file)
+            shutil.copyfile(file_path, destination)
+  
     def set_replicate(self, replicate):
         """
         Sets the replicate for the trial.
         """
-        self.replicate = int(replicate)
+        self.rep_no = int(replicate)
+        print("Replicate number: ", self.rep_no)
 
-
-    def set_trajectory_number(self, trajectory_number):
+    def set_trajectory_number(self, trajectory_number=None):
         """
         Sets the trajectory number for the trial.
         """
-        self.traj_no = int(trajectory_number)
+        if trajectory_number is None:
+            self.traj_no = self.find_latest_trajectory()
+        else:
+            self.traj_no = int(trajectory_number)
+        print("Trajectory number: ", self.traj_no)
 
-
-    def find_latest_trajectory(self, suffix=None, replicate=None)):
+    def find_latest_trajectory(self, suffix=None, replicate=None):
         """
-        Finds the latest trajectory for the trial.
+        Finds the latest trajectory for the current trial. Uses the trajectory settings.
+        Does not check converted trajectories.
         """
         if suffix is None:
             suffix = self.settings.suffix
 
         if replicate is None:
-            replicate = self.replicate
+            replicate = self.rep_no
 
         
         trajectory_files = self.trajectories[self.settings.rep_directory + str(replicate)]
@@ -151,10 +266,38 @@ class MD_Experiment(Experiment):
         trajectory_files = [file for file in trajectory_files if file.contains(suffix)]
 
         #sort the files by the number at the end
-        trajectory_files = sorted(trajectory_files, key=lambda x: int(x.split("_")[-1].split(".")[0]))
+        trajectory_files = sorted(trajectory_files, 
+                                  key=lambda x: int(x.split("_")[-1].split(".")[0]))
 
-        # set traj_no
-        self.traj_no = int(trajectory_files[-1].split("_")[-1].split(".")[0])
+        # return traj_no
+        return int(trajectory_files[-1].split("_")[-1].split(".")[0])
+
+    def save_experiment(self, save_name=None):
+        super().save_experiment(save_name=save_name)
+
+        unix_time = int(time.time())
+        if save_name is None:
+            save_name = [self.settings.parent,
+                        self.settings.pdbcode, 
+                        self.name,
+                        self.rep_no,
+                        str(unix_time)]
+            save_name = "_".join(save_name)+".pkl"
+            
+            dirs_to_join = [self.settings.logs_directory, 
+                            self.settings.parent,
+                            self.settings.pdbcode, 
+                            self.name]
+            
+            save_path = os.path.join(*dirs_to_join, save_name)
+
+            with open(save_path, 'wb') as f:
+                pickle.dump(self, f)
+        print("Saved experiment to: ", save_path)
+
+    def load_experiment(self, latest=False, load_path=None):
+        super().load_experiment(latest=latest, load_path=load_path)
+        
 
 
-     
+        

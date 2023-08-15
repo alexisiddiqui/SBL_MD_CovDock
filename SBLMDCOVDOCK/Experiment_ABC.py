@@ -1,5 +1,9 @@
 
 import os
+import glob
+import pandas as pd
+import time
+import pickle
 from abc import ABC, abstractmethod
 from SBLMDCOVDOCK.SBLSettings import Settings
 
@@ -15,44 +19,66 @@ class Experiment(ABC):
     def __init__(self,settings: Settings, name=None):
         super.__init__()
         self.settings = settings
-        if name is not None
+        if name is not None:
             self.name = name
         else:
-            self.name = settings.trial_name
+            self.name = self.settings.trial_name
 
-    def create_directory_structure(self):
-        dirs_to_join = [self.settings.data_directory, 
-                        self.settings.parent,
-                        self.settings.pdbcode, 
-                        self.settings.trial_name]
-        self.data_directory = os.path.join(*dirs_to_join)
+        self.dataframe  = pd.DataFrame()
 
-        if self.check_trial_directory():
-            self.create_trial_directory()
-        else:
-            raise ValueError("Trial directory already exists")
-
-
-    def check_trial_directory(self):
+    @abstractmethod
+    def check_args(self):
         """
-        Checks if the trial directory exists. If not, returns True.
+        Checks the arguments for the trial.
         """
-        if os.path.exists(self.data_directory):
-            return False
-        else:
-            return True
-        
+        pass
 
-    def create_trial_directory(self):
+    def create_directory_structure(self, overwrite=False):
         """
-        Creates the trial directory. And replicate directories
+        Creates the directory structure for the trial.
+        Checks if the trial directory exists. If not, creates it.
+        Otherwise, adds a number to the end of the trial name and tries again.
         """
+        if not overwrite:
+            trial_name = self.name
+            dirs_to_join = [self.settings.data_directory, 
+                            self.settings.parent,
+                            self.settings.pdbcode, 
+                            trial_name]
+            trial_dir = os.path.join(*dirs_to_join)
 
-        dirs_to_create = self.settings.trial_dirs.append([self.settings.rep_directory +
-                                                        str(i) for i in range(self.settings.replicates)])
+            trial_exists = os.path.exists(trial_dir)
+            trial_number = 1
 
-        for directory in dirs_to_create:
-            os.makedirs(os.path.join(self.data_directory, directory))
+            while trial_exists:
+                trial_name = self.name + str(trial_number)
+                dirs_to_join = [self.settings.data_directory, 
+                                self.settings.parent,
+                                self.settings.pdbcode, 
+                                trial_name]
+                trial_dir = os.path.join(*dirs_to_join)
+                trial_exists = os.path.exists(trial_dir)
+                trial_number += 1
+
+            self.name = trial_name
+
+        self.create_directories()
+        print("Created directories for trial: ", self.name)
+
+    @abstractmethod
+    def create_directories(self):
+        """
+        Creates the trial directories
+        """
+        for dir in self.settings.dirs_to_create:
+            trial_name = self.name
+            dirs_to_join = [dir, 
+                            self.settings.parent,
+                            self.settings.pdbcode, 
+                            trial_name]
+            trial_dir = os.path.join(*dirs_to_join)
+            
+            os.makedirs(trial_dir, exist_ok=True)
         
     @abstractmethod
     def prepare_config(self):
@@ -60,6 +86,7 @@ class Experiment(ABC):
         Prepares the configuration file for the trial.
         """
         pass
+
     @abstractmethod
     def load_input_files(self):
         """
@@ -74,16 +101,58 @@ class Experiment(ABC):
         """
         pass
 
-    def save_experiment(self):
+    @abstractmethod
+    def save_experiment(self, save_name=None):
         """
-        Writes the settings of the experiment (contents of class) to a pickle file.
+        Writes the settings of the experiment (contents of class) to a pickle file. Logs???
         """
-        pass
+        unix_time = int(time.time())
+        if save_name is not None:
+            save_name = save_name+"_"+str(unix_time)+".pkl"
+            save_path = os.path.join(self.settings.logs_directory, save_name)
 
-    def load_experiment(self):
+            with open(save_path, 'wb') as f:
+                pickle.dump(self, f)
+
+    @abstractmethod
+    def load_experiment(self, latest=False, load_path=None):
         """
         Loads the settings of the experiment from a pickle file.
         """
-        pass
+        if load_path is not None:
+            try:
+                with open(load_path, 'rb') as f:
+                    print("Loadeing experiment from: ", load_path)
+                    return pickle.load(f)
+            except:
+                search_dir = load_path
 
-    def 
+        elif load_path is None:
+            dirs_to_search = [self.settings.logs_directory,
+                            self.settings.parent,
+                            self.settings.pdbcode,
+                            self.name]
+            search_dir = os.path.join(*dirs_to_search)
+        
+        try:
+            search_dir = os.path.join(search_dir)
+            pkl_files = glob.glob(search_dir, "*.pkl")
+            print("Found files: ", pkl_files)
+        except:
+            pkl_files = glob.glob(search_dir, "*.pkl")
+            print("Found files: ", pkl_files)
+
+        if not pkl_files:
+            print("No experiment files found.")
+            raise FileNotFoundError
+        
+        if latest is True:
+            file = max(pkl_files, key=os.path.getctime)
+        
+        else:
+            file = min(pkl_files, key=os.path.getctime)
+        
+        load_path = file    
+        print("Loading experiment from: ", load_path)
+        with open(load_path, 'rb') as f:
+            return pickle.load(f)
