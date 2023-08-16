@@ -26,6 +26,8 @@ class Settings:
             if pdbcode not in structures["PDBID"]:
                 raise ValueError("PDBID not in database")
             self.pdbcode = pdbcode
+        else:
+            self.pdbcode = None
 
         if name is not None:
             self.trial_name = name
@@ -40,6 +42,7 @@ class Settings:
         self.topology = 'topology'
         self.viz = 'visualisation'
         self.ana = 'analysis'
+        self.search = None
         self.suffix = None
         self.pH = 7.4
         self.parent = None
@@ -64,9 +67,9 @@ class GROMACS_Settings(Settings):
         self.structures_output = os.path.join(self.structures_output,"APO")
         self.parent = "MD"
         self.suffix = "MD"
-        self.traj_extension = "gro"
+        self.search_traj = ".gro"
         self.pbc_commands = [("-pbc", "mol", "-center"), ("-pbc", "nojump")]
-        self.pbc_extensions = [ext[1] for ext in self.pbc_commands]
+        self.pbc_extensions = ["-"+ext[1] for ext in self.pbc_commands]
         self.environ_path = os.getcwd()
         self.environ = "GMXLIB"
         self.gmx = ("gmx","gmx_mpi")
