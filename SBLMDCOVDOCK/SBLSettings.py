@@ -84,6 +84,7 @@ class DOCKING_Settings(Settings):
         self.structures_input = os.path.join(self.structures_input,"Ligand_Substrate")
         self.structures_output = os.path.join(self.structures_output,"Ligand_Substrate")
         self.parent = "Dock"
+        self.covalent = False
 
 
 # fprint_calculator.py
