@@ -1,0 +1,21 @@
+BEGIN_RES SER    64
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: CA   and  CB  
+REMARK    2  A    between atoms: CB   and  OG  
+ROOT
+HETATM    1  CA  SER    64     -15.382   9.648  26.165  1.00  0.00     0.268 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  CB  SER    64     -16.386  10.316  25.240  1.00  0.00     0.218 C 
+BRANCH   2   3
+HETATM    3  OG  SER    64     -16.612  11.658  25.649  1.00  0.00    -0.316 OA
+HETATM    4  C   SER    64     -15.865  12.728  25.153  1.00  0.00     0.284 C 
+HETATM    5  C   SER    64     -16.119  14.072  25.679  1.00  0.00     0.099 C 
+HETATM    6  O   SER    64     -14.992  12.543  24.260  1.00  0.00    -0.260 OA
+HETATM    7  C   SER    64     -15.445  15.136  25.248  1.00  0.00     0.090 C 
+HETATM    8  N   SER    64     -15.693  16.448  25.764  1.00  0.00    -0.383 N 
+ATOM      9  HN  SER    64     -15.164  17.226  25.371  1.00  0.00     0.159 HD
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES SER    64

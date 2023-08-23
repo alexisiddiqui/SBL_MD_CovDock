@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: alexi (1000)
 ;	On host: Celeste
-;	At date: Wed Aug 16 01:12:41 2023
+;	At date: Wed Aug 23 01:54:32 2023
 ;
 ;	Created by:
 ;	                     :-) GROMACS - gmx grompp, 2023.2 (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /usr/local/gromacs
 ;	Working dir:  /home/alexi/Documents/SBL_MD_CovDock
 ;	Command line:
-;	  gmx grompp -f config/test/md_test.mdp -c data/MD/1K55/test/R_2/APO_1K55_npt.gro -p data/MD/1K55/test/R_2/APO_1K55.top -o data/MD/1K55/test/R_2/APO_md_1K55_0.tpr -r data/MD/1K55/test/R_2/APO_1K55_npt.gro -v
+;	  gmx grompp -f config/APO_MD60/md60.mdp -c data/MD/1K55/APO_MD60_genvel/R_5/APO_1K55_npt.gro -p data/MD/1K55/APO_MD60_genvel/R_5/APO_1K55.top -o data/MD/1K55/APO_MD60_genvel/R_5/APO_md_1K55_0.tpr -r data/MD/1K55/APO_MD60_genvel/R_5/APO_1K55_npt.gro -maxwarn 1 -v
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -25,7 +25,7 @@ integrator               = md
 ; Start time and timestep in ps
 tinit                    = 0
 dt                       = 0.002
-nsteps                   = 5000
+nsteps                   = 30000
 ; For exact run continuation or redoing part of a run
 init-step                = 0
 ; Part index is updated automatically on checkpointing (keeps files separate)
@@ -169,16 +169,16 @@ annealing-time           =
 annealing-temp           = 
 
 ; GENERATE VELOCITIES FOR STARTUP RUN
-gen_vel                  = no
+gen_vel                  = yes
 gen-temp                 = 300
-gen-seed                 = -1913987081
+gen-seed                 = -537464901
 
 ; OPTIONS FOR BONDS    
 constraints              = h-bonds
 ; Type of constraint algorithm
 constraint_algorithm     = lincs
 ; Do not constrain the start configuration
-continuation             = yes
+continuation             = no
 ; Use successive overrelaxation to reduce the number of shake iterations
 Shake-SOR                = no
 ; Relative tolerance of shake

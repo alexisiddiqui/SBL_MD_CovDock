@@ -1,0 +1,1597 @@
+AutoDock-GPU version: v1.5.3-53-gf58a5173fa2f4c82a74b40bc895ad7e65de59f47
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               6T3D_SER_KE1_flex.pdbqt
+Grid fld file:                             APO_6T3D_ADT_rigid.maps.fld
+
+Random seed:                               1692707819, 229233
+Number of runs:                            20
+Number of energy evaluations:              1132076
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/alexi/Documents/AutoDock-GPU/bin/autodock_CUDA_64wi -M APO_6T3D_ADT_rigid.maps.fld -L 6T3D_SER_KE1_flex.pdbqt --lsmet ad -v 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             APO_6T3D_ADT_rigid
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     46.604000, 46.553000, 46.513000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               6T3D_SER_KE1_flex
+Number of atoms:                           30
+Number of rotatable bonds:                 2
+Number of atom types:                      5
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 20
+DPF> fld APO_6T3D_ADT_rigid.maps.fld
+DPF> move 6T3D_SER_KE1_flex.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    1132766
+Number of generations used:                231
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: BEGIN_RES SER    64
+INPUT-LIGAND-PDBQT: REMARK  2 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: CA   and  CB  
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: CB   and  OG  
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  CA  SER    64     -15.386   9.649  26.165  1.00  0.00     0.268 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   2
+INPUT-LIGAND-PDBQT: HETATM    2  CB  SER    64     -16.387  10.313  25.239  1.00  0.00     0.218 C 
+INPUT-LIGAND-PDBQT: BRANCH   2   3
+INPUT-LIGAND-PDBQT: HETATM    3  OG  SER    64     -16.601  11.654  25.651  1.00  0.00    -0.319 OA
+INPUT-LIGAND-PDBQT: HETATM    4  C   SER    64     -17.486  12.500  24.979  1.00  0.00     0.267 C 
+INPUT-LIGAND-PDBQT: HETATM    5  O   SER    64     -18.117  12.096  23.966  1.00  0.00    -0.265 OA
+INPUT-LIGAND-PDBQT: HETATM    6  C   SER    64     -17.683  13.911  25.453  1.00  0.00     0.145 C 
+INPUT-LIGAND-PDBQT: HETATM    7  C   SER    64     -18.037  13.985  26.948  1.00  0.00     0.208 C 
+INPUT-LIGAND-PDBQT: HETATM    8  C   SER    64     -16.494  14.813  25.084  1.00  0.00     0.129 C 
+INPUT-LIGAND-PDBQT: HETATM    9  C   SER    64     -19.362  13.304  27.237  1.00  0.00     0.029 C 
+INPUT-LIGAND-PDBQT: HETATM   10  N   SER    64     -18.163  15.383  27.366  1.00  0.00    -0.054 N 
+INPUT-LIGAND-PDBQT: HETATM   11  C   SER    64     -19.201  11.834  27.600  1.00  0.00     0.013 C 
+INPUT-LIGAND-PDBQT: HETATM   12  C   SER    64     -20.018  14.150  28.312  1.00  0.00     0.094 C 
+INPUT-LIGAND-PDBQT: HETATM   13  S   SER    64     -19.580  13.631  30.017  1.00  0.00    -0.155 SA
+INPUT-LIGAND-PDBQT: HETATM   14  C   SER    64     -21.195  14.036  30.773  1.00  0.00     0.075 C 
+INPUT-LIGAND-PDBQT: HETATM   15  C   SER    64     -22.336  13.329  30.081  1.00  0.00     0.059 C 
+INPUT-LIGAND-PDBQT: HETATM   16  C   SER    64     -21.499  15.518  30.685  1.00  0.00     0.248 C 
+INPUT-LIGAND-PDBQT: HETATM   17  C   SER    64     -23.225  14.445  29.574  1.00  0.00     0.278 C 
+INPUT-LIGAND-PDBQT: HETATM   18  C   SER    64     -24.679  14.107  29.709  1.00  0.00     0.250 C 
+INPUT-LIGAND-PDBQT: HETATM   19  N   SER    64     -22.895  15.663  30.301  1.00  0.00    -0.061 N 
+INPUT-LIGAND-PDBQT: HETATM   20  O   SER    64     -25.361  13.997  28.655  1.00  0.00    -0.271 OA
+INPUT-LIGAND-PDBQT: HETATM   21  N   SER    64     -25.307  13.903  30.989  1.00  0.00    -0.359 N 
+INPUT-LIGAND-PDBQT: HETATM   22  C   SER    64     -26.721  13.576  31.066  1.00  0.00     0.152 C 
+INPUT-LIGAND-PDBQT: HETATM   23  C   SER    64     -24.570  14.011  32.238  1.00  0.00     0.152 C 
+INPUT-LIGAND-PDBQT: ATOM     24  HN1 SER    64     -23.519  15.855  31.085  1.00  0.00     0.278 HD
+INPUT-LIGAND-PDBQT: ATOM     25  HN2 SER    64     -23.091  16.518  29.780  1.00  0.00     0.278 HD
+INPUT-LIGAND-PDBQT: ATOM     26  HN1 SER    64     -17.366  15.705  27.915  1.00  0.00     0.278 HD
+INPUT-LIGAND-PDBQT: ATOM     27  HN2 SER    64     -18.067  16.038  26.590  1.00  0.00     0.278 HD
+INPUT-LIGAND-PDBQT: HETATM   28  O   SER    64     -16.333  14.867  23.699  1.00  0.00    -0.395 OA
+INPUT-LIGAND-PDBQT: HETATM   29  C   SER    64     -15.192  14.375  25.740  1.00  0.00     0.040 C 
+INPUT-LIGAND-PDBQT: ATOM     30  HO  SER    64     -17.146  15.140  23.290  1.00  0.00     0.210 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH   2   3
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   2
+INPUT-LIGAND-PDBQT: END_RES SER    64
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.85e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.85e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.85e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.37 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.85e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      41.341  45.439  42.131+22.75 -0.12    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      41.806  44.595  43.302+48.26 -0.00    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      42.819  45.287  44.015 +2.18 +0.01    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      43.364  44.782  45.198+11.01 +0.03    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.957  43.691  45.678 +8.59 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      44.437  45.547  45.917+94.02 +0.05    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      45.615  45.913  44.998+99.99 +0.10    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      43.872  46.766  46.664 +1.71 +0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.321  44.673  44.482+10.46 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.602  46.704  45.737+10.28 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.757  44.184  43.155+77.73 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.793  45.039  44.445+20.20 +0.02    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.318  45.786  42.853+73.44 +0.01    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      50.001  45.070  42.839 +7.47 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.975  43.564  42.949+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.830  45.566  44.007+99.99 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.750  43.261  44.214+38.44 +0.07    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.604  42.037  44.068+99.99 +0.09    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.553  44.428  44.554+26.63 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.341  41.042  44.795 +3.96 -0.05    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      52.695  41.966  43.130 +5.95 -0.09    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      53.492  40.756  43.026+96.44 +0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      53.041  43.080  42.262+13.99 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.521  44.366  44.239 +0.99 +0.05    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      51.756  44.510  45.550 +1.81 +0.05    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      46.581  47.693  45.492 +0.37 +0.09    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.370  46.803  46.725 +0.13 +0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      42.944  46.363  47.625 +4.13 -0.16    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      43.240  47.791  45.732+29.96 +0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      43.339  45.723  48.206 +1.81 +0.07    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.76e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.76e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.76e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.35 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.76e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      41.221  45.666  42.291+21.37 -0.13    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      41.844  44.720  43.300+33.92 -0.02    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      42.863  45.394  44.022 +3.17 +0.01    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      43.392  44.879  45.207+11.04 +0.03    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.964  43.794  45.683 +8.31 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      44.472  45.626  45.935+79.28 +0.05    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      45.662  45.975  45.025+99.99 +0.09    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      43.921  46.853  46.679 +1.85 +0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.351  44.724  44.512+10.65 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.656  46.748  45.772+21.71 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.789  44.246  43.180+81.72 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.829  45.067  44.486+28.03 +0.02    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.377  45.807  42.898+97.95 +0.00    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      50.048  45.065  42.895 +7.49 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.998  43.559  43.003+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.877  45.546  44.069+99.99 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.759  43.242  44.273+42.44 +0.08    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.594  42.005  44.131+99.99 +0.09    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.578  44.396  44.620+35.10 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.310  41.013  44.855 +3.31 -0.04    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      52.691  41.919  43.201 +6.56 -0.09    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      53.469  40.695  43.100+60.09 +0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      53.061  43.028  42.336+16.75 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.547  44.319  44.312 +1.40 +0.06    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      51.775  44.474  45.618 +1.98 +0.05    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      46.652  47.739  45.527 +1.09 +0.08    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.418  46.851  46.758 +0.19 +0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      42.980  46.464  47.634 +3.55 -0.16    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      43.312  47.889  45.745+28.12 +0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      43.360  45.817  48.216 +2.24 +0.07    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.43e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.43e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.43e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.11 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.43e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.10 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.10 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      52.866  43.560  42.539 +1.79 +0.03    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      51.424  43.992  42.353+36.88 -0.00    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      50.626  43.454  43.396+98.39 -0.07    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      50.652  43.978  44.690+52.58 +0.06    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      51.405  44.947  44.975+25.16 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      49.788  43.378  45.761+11.96 +0.02    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      48.311  43.286  45.342 +1.97 +0.02    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      50.343  42.035  46.262 +9.46 +0.01    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.716  44.663  45.108+11.36 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      47.528  42.646  46.401 +6.79 +0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      47.843  45.119  43.660+18.55 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      46.290  44.571  45.617+99.99 +0.03    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      45.092  44.028  44.337+42.31 -0.05    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      43.688  45.036  44.933+17.62 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      44.037  46.503  45.009+99.99 +0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      43.259  44.630  46.329+56.57 +0.05    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      43.845  46.866  46.466 +1.92 +0.08    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      43.246  48.230  46.629+20.97 +0.14    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      43.014  45.845  47.090+17.35 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      43.938  49.117  47.198+99.99 -0.21    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      41.924  48.553  46.156 +0.47 -0.14    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      41.389  49.892  46.338+99.99 -0.00    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      41.082  47.574  45.488+99.99 -0.07    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      42.028  46.100  47.152+53.69 +0.11    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      43.174  45.742  48.092 +0.76 +0.11    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      47.271  41.684  46.176 +0.50 +0.02    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      48.079  42.447  47.236 -0.11 -0.00    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      51.614  42.206  46.812+39.54 +0.02    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      50.388  40.970  45.176 +2.74 +0.00    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      51.586  42.871  47.490 +0.26 -0.04    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.84e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.84e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.84e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.84e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      42.580  42.002  42.896+23.45 +0.03    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      43.723  42.480  42.021+99.99 +0.03    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      44.930  41.856  42.431+99.99 -0.04    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      46.159  42.171  41.846+14.87 -0.00    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      46.230  43.018  40.916+99.99 +0.10    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      47.411  41.487  42.314+49.09 +0.03    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      47.599  41.584  43.838+99.99 +0.03    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      47.503  40.041  41.800 +0.30 +0.02    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.770  43.024  44.283+99.99 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      48.803  40.855  44.243 +0.86 -0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      46.449  43.686  44.652 +8.21 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      48.785  42.975  45.409 +0.71 +0.01    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.028  42.737  47.064+99.99 +0.06    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      49.236  43.754  47.987+47.59 -0.02    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.328  45.158  47.438+89.10 -0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.634  43.175  47.907+99.99 -0.03    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.774  45.307  47.013+28.46 +0.02    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.308  46.675  47.314+17.44 +0.02    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.558  44.275  47.678 +2.94 +0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.652  47.402  46.344+49.27 -0.05    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      51.431  47.175  48.659 +5.32 +0.01    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      51.954  48.510  48.897+13.53 -0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      51.045  46.384  49.817 +0.89 -0.00    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.030  44.598  48.522 +0.95 -0.02    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      52.399  44.005  47.167 +5.69 -0.10    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      48.594  39.965  44.695 +0.36 +0.02    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      49.327  40.485  43.450 +0.33 +0.05    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      47.524  40.018  40.405+35.99 +0.00    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      46.377  39.156  42.316+99.99 +0.01    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      48.226  40.571  40.084+97.93 -0.08    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.91e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.91e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.91e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.91e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.09 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.09 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      51.458  41.148  46.302+57.99 +0.03    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      50.307  41.516  45.385 +3.42 +0.03    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      49.392  42.350  46.079 -0.39 -0.04    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      49.462  43.743  46.006+57.04 +0.02    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      50.359  44.307  45.325+99.99 -0.05    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      48.470  44.585  46.755+56.21 -0.00    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      47.015  44.190  46.451+99.99 +0.02    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      48.768  44.619  48.263+66.84 -0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.674  44.420  44.990 +5.23 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.096  45.005  47.248+99.99 -0.04    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      46.928  43.192  44.127+34.85 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      45.236  44.903  44.989+99.99 +0.04    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      44.009  43.543  44.879+80.21 -0.04    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      42.778  44.460  43.885 +5.68 +0.00    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      43.371  44.992  42.603+99.99 -0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      42.236  45.662  44.633+99.99 -0.16    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      43.193  46.493  42.694+99.99 +0.12    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      42.831  47.096  41.370 +4.53 +0.02    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      42.177  46.776  43.699+99.99 +0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      43.645  47.902  40.846+22.45 -0.29    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      41.602  46.779  40.690 +1.25 +0.33    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      41.298  47.390  39.406 +4.82 -0.19    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      40.628  45.851  41.243+99.99 -0.06    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      41.248  46.937  43.310 -0.03 -0.28    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      42.281  47.689  44.142+99.99 +0.08    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      45.686  44.491  48.028+99.99 +0.25    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.574  45.721  47.795 +3.91 +0.16    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      50.029  45.168  48.500+16.43 +0.04    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      48.667  43.249  48.918+99.99 -0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      50.091  46.023  48.090 +0.29 -0.01    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.80e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.80e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.80e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.16 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.80e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      42.801  42.407  43.211+65.47 +0.04    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      43.796  42.430  42.066+96.95 +0.03    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      45.009  41.820  42.477+99.99 -0.04    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      46.229  42.121  41.867+15.14 -0.00    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      46.286  42.943  40.914+99.99 +0.14    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      47.489  41.453  42.337+62.17 +0.03    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      47.698  41.593  43.855+99.99 +0.03    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      47.578  39.994  41.862 +0.24 +0.02    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.870  43.045  44.258+99.99 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      48.909  40.878  44.264 +0.20 -0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      46.553  43.714  44.626 +5.70 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      48.901  43.029  45.372 +1.25 +0.01    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.166  42.836  47.042+68.04 +0.05    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      49.383  43.880  47.921+62.12 -0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.465  45.269  47.332+83.92 -0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.782  43.302  47.838+99.99 -0.03    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.905  45.409  46.884+32.53 +0.02    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.439  46.786  47.140+22.58 +0.03    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.700  44.397  47.566 +4.03 +0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.768  47.486  46.145+45.09 -0.05    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      51.579  47.323  48.468+11.56 +0.01    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      52.102  48.665  48.663+53.92 -0.02    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      51.210  46.564  49.653 +1.87 -0.00    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.182  44.745  48.395 +3.34 -0.02    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      52.535  44.115  47.052 +8.21 -0.10    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      48.707  40.000  44.743 +0.34 +0.02    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      49.423  40.487  43.474 +0.34 +0.05    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      47.580  39.933  40.468+18.86 -0.02    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      46.461  39.121  42.417+99.99 +0.01    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      48.277  40.478  40.123+30.27 -0.02    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.46e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.46e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.46e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.52 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.46e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.09 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.09 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      42.365  43.091  42.983+29.69 -0.00    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      41.753  44.319  43.631+99.99 +0.05    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      42.766  45.069  44.283 +0.97 +0.01    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      43.354  44.636  45.473+24.17 +0.03    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.988  43.560  46.016 +9.92 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      44.425  45.461  46.125+99.99 +0.06    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      45.569  45.811  45.158+66.10 +0.09    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      43.848  46.701  46.828 +2.05 +0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.293  44.565  44.684 +8.91 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.554  46.660  45.831 +9.08 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.708  43.998  43.398+36.61 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.754  44.965  44.589+16.87 +0.02    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.219  45.645  42.949+54.14 +0.00    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      49.918  44.971  42.925+14.50 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.934  43.472  43.108+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.764  45.544  44.044+99.99 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.749  43.250  44.365+50.82 +0.08    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.630  42.042  44.254+99.99 +0.10    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.530  44.452  44.626+26.57 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.412  41.078  45.036 +7.79 -0.05    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      52.698  41.953  43.292 +8.19 -0.09    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      53.523  40.758  43.225+37.47 +0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      52.993  43.031  42.362+10.89 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.491  44.398  44.289 +1.08 +0.05    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      51.756  44.588  45.612 +1.18 +0.04    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      46.501  47.636  45.539 +0.31 +0.09    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.345  46.803  46.819 +0.11 +0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      42.956  46.323  47.832 +6.52 -0.18    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      43.166  47.664  45.865+14.40 +0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      43.382  45.722  48.432 +5.73 +0.06    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.31e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.31e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.31e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.31e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      52.668  44.126  42.498 +0.13 +0.00    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      51.218  43.999  42.072+56.18 -0.01    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      50.454  43.456  43.137+99.99 -0.07    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      50.531  43.964  44.435+36.43 +0.06    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      51.302  44.924  44.705+25.14 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      49.701  43.359  45.530+12.99 +0.02    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      48.209  43.284  45.164 +3.17 +0.02    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      50.262  42.005  45.996 +6.78 +0.01    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.618  44.668  44.967 +8.27 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      47.459  42.637  46.243 +4.14 +0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      47.696  45.140  43.522+15.54 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      46.211  44.582  45.527+99.99 +0.03    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      44.962  44.064  44.285+44.34 -0.05    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      43.589  45.076  44.944+12.49 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      43.954  46.540  45.024+99.99 +0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      43.208  44.657  46.349+38.68 +0.04    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      43.818  46.887  46.492 +1.73 +0.08    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      43.237  48.254  46.692+28.29 +0.14    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      43.002  45.865  47.133+16.52 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      43.957  49.127  47.245+99.99 -0.21    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      41.902  48.593  46.271 +0.57 -0.14    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      41.385  49.934  46.488+99.99 -0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      41.027  47.628  45.623+99.71 -0.06    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      42.021  46.127  47.233+30.77 +0.15    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      43.197  45.748  48.127 +0.87 +0.10    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      47.186  41.681  46.016 +1.44 +0.02    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      48.039  42.424  47.055 -0.16 +0.00    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      51.554  42.159  46.501+93.89 -0.03    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      50.258  40.953  44.896 +0.45 +0.00    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      51.556  42.816  47.187 +0.47 -0.03    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.76e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.76e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.76e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.76e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.07 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.07 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      43.200  43.279  43.156+27.91 -0.02    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      43.746  42.426  42.027+98.58 +0.03    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      44.965  41.823  42.431+99.99 -0.04    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      46.183  42.145  41.829+14.55 -0.00    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      46.233  42.982  40.888+99.99 +0.12    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      47.449  41.484  42.292+59.31 +0.03    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      47.653  41.602  43.811+99.99 +0.03    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      47.554  40.032  41.795 +0.32 +0.02    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.809  43.051  44.237+99.99 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      48.870  40.894  44.212 +0.33 -0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      46.484  43.700  44.612 +7.04 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      48.838  43.029  45.352 +1.31 +0.01    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.102  42.802  47.018+64.21 +0.05    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      49.306  43.847  47.915+49.54 -0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.375  45.244  47.347+99.99 -0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.711  43.284  47.827+99.99 -0.03    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.814  45.406  46.904+37.37 +0.02    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.333  46.784  47.181+18.21 +0.03    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.618  44.393  47.573 +3.23 +0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.657  47.503  46.199+42.26 -0.04    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      51.465  47.303  48.519 +5.16 +0.01    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      51.973  48.648  48.734+22.74 -0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      51.102  46.523  49.690 +0.83 -0.00    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.095  44.733  48.408 +2.41 -0.02    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      52.457  44.127  47.056 +6.01 -0.09    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      48.677  40.007  44.677 +0.35 +0.02    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      49.390  40.521  43.418 +0.34 +0.05    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      47.560  39.993  40.400+36.16 +0.00    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      46.445  39.140  42.334+99.99 +0.01    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      48.252  40.550  40.064+99.99 -0.07    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.92e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.92e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.92e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.54 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.92e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.09 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.09 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      48.422  39.779  41.948 +0.74 +0.05    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      47.492  40.406  42.969+25.11 +0.03    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      47.567  41.820  42.878+76.59 -0.07    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      46.645  42.562  42.136+37.44 +0.02    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      45.718  41.988  41.505 +1.67 +0.00    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      46.762  44.057  42.071+62.12 +0.01    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      46.840  44.702  43.465+14.53 +0.05    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      47.909  44.505  41.151+99.99 +0.00    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      45.569  44.459  44.258+92.94 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      47.008  46.151  43.340 +9.03 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.638  43.197  45.108+99.99 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      45.341  45.736  45.045+99.99 +0.04    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      46.157  45.737  46.688+29.48 -0.06    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      44.872  46.709  47.552+42.71 +0.03    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      43.507  46.075  47.432+12.44 +0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      44.743  48.105  46.976+45.28 +0.08    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      42.660  47.120  46.737+47.96 -0.00    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      41.267  47.168  47.288+99.99 +0.08    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      43.325  48.410  46.864+29.06 -0.04    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      40.316  46.861  46.520+99.99 +0.02    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      40.990  47.545  48.650+17.24 -0.18    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      39.621  47.575  49.137+18.00 +0.06    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      42.046  47.904  49.584+27.21 +0.06    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      42.966  48.983  47.628+23.02 +0.22    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      43.103  49.062  46.111 +0.37 +0.25    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      47.958  46.459  43.549+18.66 +0.07    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.970  46.472  42.373+26.23 -0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      47.694  44.056  39.847+99.99 -0.16    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      49.275  44.042  41.638+99.99 -0.00    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      46.841  44.345  39.543 -0.23 +0.02    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.01e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.01e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.01e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.54 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.01e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.06 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.06 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      41.740  50.418  45.755+20.08 +0.16    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      42.662  51.527  46.225+99.99 +0.25    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      43.927  51.394  45.595+99.99 -0.18    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      45.110  51.294  46.330+12.69 +0.36    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      45.089  51.335  47.589+49.46 -0.50    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      46.426  51.151  45.621+99.99 +0.12    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      46.425  49.993  44.609+38.04 +0.08    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      46.890  52.477  44.997 +1.30 +0.12    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.224  48.656  45.299+73.46 +0.00    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      47.711  49.935  43.910+33.94 -0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      44.758  48.254  45.387+99.99 +0.01    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.100  47.679  44.538+59.82 +0.04    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      46.244  46.880  43.125+99.99 -0.11    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      47.091  45.265  43.262+12.09 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      46.928  44.656  44.635 +0.96 +0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      48.583  45.394  43.030+38.03 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      48.341  44.511  45.158+99.99 +0.06    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      48.524  43.239  45.931 +1.07 +0.01    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      49.260  44.581  44.030+99.99 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      48.799  43.327  47.157 +0.96 +0.04    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      48.390  41.941  45.321 +1.50 -0.04    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      48.576  40.738  46.114+48.06 -0.01    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      48.069  41.778  43.912+52.85 +0.03    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      49.556  43.667  43.684+10.32 +0.06    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      50.189  44.922  44.277+28.62 +0.06    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      47.657  50.285  42.954+75.25 -0.08    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      48.385  50.614  44.266 +6.12 +0.28    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      47.063  53.448  45.985 +0.27 -0.40    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      45.940  52.993  43.925 +1.03 +0.05    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      47.655  53.126  46.654 +1.10 +0.11    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.93e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.92e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.92e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.30 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.92e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      41.717  45.359  41.900+87.89 -0.17    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      41.849  44.707  43.263+35.37 -0.02    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      42.875  45.352  44.003 +3.56 +0.00    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      43.416  44.787  45.160+11.43 +0.03    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.993  43.683  45.595 +8.44 -0.05    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      44.502  45.504  45.908+99.99 +0.05    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      45.683  45.892  45.002+99.99 +0.09    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      43.958  46.698  46.709 +1.60 +0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.368  44.664  44.431 +9.99 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.685  46.634  45.771+19.15 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.793  44.242  43.086+81.71 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.845  45.009  44.405+24.48 +0.02    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.378  45.815  42.845+95.00 +0.00    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      50.050  45.075  42.795 +6.34 +0.00    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      50.001  43.566  42.839+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.890  45.507  43.979+99.99 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.774  43.196  44.087+50.18 +0.07    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.608  41.967  43.885+99.99 +0.08    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.596  44.335  44.474+31.65 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.332  40.946  44.569 +1.14 -0.04    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      52.696  41.920  42.942 +8.20 -0.08    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      53.473  40.703  42.782+99.99 +0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      53.057  43.065  42.121+19.51 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.562  44.272  44.154 +1.29 +0.06    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      51.803  44.371  45.473 +3.32 +0.06    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      46.678  47.633  45.569 +1.58 +0.10    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.456  46.694  46.764 +0.25 +0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      43.027  46.268  47.655 +4.31 -0.16    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      43.340  47.772  45.825+18.39 +0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      43.413  45.598  48.207 +2.02 +0.06    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.13e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.13e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.13e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.13e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.03 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.03 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      51.105  45.411  42.137 +2.45 -0.03    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      51.357  43.928  42.331+50.72 -0.00    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      50.601  43.457  43.435+76.73 -0.07    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      50.662  44.072  44.688+76.56 +0.06    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      51.411  45.067  44.879+23.93 -0.03    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      49.841  43.541  45.827+17.17 +0.02    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      48.353  43.404  45.466 +2.45 +0.02    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      50.429  42.242  46.403 +9.80 +0.01    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.732  44.753  45.154+15.51 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      47.612  42.831  46.592+26.88 +0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      47.806  45.108  43.675+16.96 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      46.325  44.684  45.716+99.99 +0.03    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      45.093  44.038  44.519+53.98 -0.05    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      43.696  45.071  45.089+14.84 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      44.029  46.544  45.050+99.99 +0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      43.319  44.760  46.524+75.75 +0.06    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      43.880  47.007  46.484 +1.99 +0.09    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      43.269  48.373  46.569+16.86 +0.15    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      43.083  46.024  47.205 +8.85 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      43.968  49.304  47.051+99.99 -0.22    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      41.928  48.647  46.120 +0.60 -0.15    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      41.382  49.989  46.224+99.99 +0.01    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      41.077  47.614  45.551+99.99 -0.06    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      42.096  46.272  47.282 +6.40 +0.12    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      43.277  45.993  48.206 +1.87 +0.11    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      47.361  41.854  46.444 -0.03 +0.01    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      48.193  42.698  47.420 -0.03 -0.10    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      51.716  42.465  46.896+41.08 +0.04    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      50.452  41.103  45.393 +5.08 +0.00    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      51.701  43.177  47.526 +0.29 -0.04    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.74e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.74e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.74e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.35 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.74e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      41.382  45.565  42.167+16.77 -0.13    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      41.827  44.714  43.341+34.23 -0.01    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      42.847  45.389  44.060 +2.59 +0.01    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      43.378  44.876  45.245+11.46 +0.02    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.951  43.791  45.724 +8.36 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      44.459  45.624  45.970+83.24 +0.05    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      45.647  45.971  45.058+99.99 +0.09    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      43.909  46.852  46.714 +1.99 +0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.336  44.719  44.547+10.08 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.643  46.746  45.802+19.60 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.772  44.239  43.216+84.14 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.814  45.062  44.517+26.98 +0.02    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.360  45.800  42.928+95.21 -0.00    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      50.031  45.057  42.924 +7.97 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.981  43.552  43.034+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.862  45.540  44.096+99.99 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.744  43.236  44.303+41.23 +0.08    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.578  41.999  44.162+99.99 +0.09    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.563  44.391  44.647+35.96 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.296  41.009  44.887 +3.20 -0.04    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      52.674  41.911  43.230 +6.97 -0.09    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      53.452  40.688  43.130+44.61 +0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      53.043  43.019  42.364+15.04 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.532  44.313  44.338 +1.56 +0.06    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      51.762  44.470  45.645 +1.90 +0.05    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      46.638  47.735  45.557 +0.96 +0.08    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.406  46.849  46.789 +0.18 +0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      42.970  46.464  47.670 +4.00 -0.16    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      43.299  47.887  45.779+20.90 +0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      43.351  45.818  48.253 +2.43 +0.07    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.78e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.78e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.78e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.05 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.78e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.06 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.06 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      43.046  43.105  43.335+41.91 +0.01    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      43.752  42.541  42.117+99.99 +0.03    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      44.965  41.921  42.513+99.99 -0.04    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      46.184  42.227  41.902+15.16 +0.00    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      46.239  43.062  40.960+99.99 +0.07    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      47.443  41.548  42.356+66.20 +0.03    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      47.659  41.665  43.875+99.99 +0.03    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      47.525  40.095  41.860 +0.36 +0.02    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.839  43.111  44.298+99.99 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      48.870  40.940  44.268 +0.30 -0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      46.526  43.779  44.682 +6.59 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      48.874  43.075  45.407 +1.25 +0.01    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.147  42.859  47.078+82.67 +0.06    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      49.372  43.887  47.965+67.47 -0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.456  45.284  47.397+89.09 -0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.767  43.305  47.868+99.99 -0.03    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.894  45.425  46.944+28.66 +0.02    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.434  46.796  47.217+23.58 +0.03    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.688  44.401  47.608 +4.10 +0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.761  47.511  46.232+69.51 -0.05    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      51.582  47.314  48.553+10.31 +0.01    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      52.110  48.651  48.765+23.60 -0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      51.216  46.539  49.728 +1.64 -0.00    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.176  44.735  48.440 +2.90 -0.02    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      52.520  44.124  47.085 +7.10 -0.10    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      48.667  40.056  44.735 +0.35 +0.02    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      49.379  40.559  43.470 +0.34 +0.05    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      47.521  40.055  40.465+25.81 -0.00    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      46.407  39.218  42.407+99.99 +0.01    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      48.218  40.603  40.124+50.75 -0.06    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.43e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.43e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.43e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.74 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.43e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.94 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.94 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      40.894  45.484  51.855+32.52 +0.08    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      39.918  45.606  50.701+20.31 +0.07    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      40.546  46.263  49.612+99.99 -0.14    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      41.703  47.028  49.780+16.96 +0.06    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.220  47.169  50.920+32.89 +0.06    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      42.335  47.703  48.597+99.99 +0.09    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      42.604  46.729  47.438+30.80 +0.07    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      41.544  48.944  48.152+11.67 +0.03    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      43.602  45.657  47.836+73.65 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      43.169  47.451  46.295 +1.59 -0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      42.934  44.412  48.402+73.81 +0.01    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      44.440  45.413  46.594+99.99 +0.04    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      43.752  44.116  45.494+99.99 -0.05    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      45.361  43.459  44.924+99.99 +0.03    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      46.236  43.029  46.078+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      46.151  44.501  44.158+27.33 +0.08    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      47.477  43.887  45.955 +9.99 +0.01    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      48.721  43.121  46.290 +1.02 +0.01    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      47.535  44.424  44.603 +2.04 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      49.388  43.487  47.296 +0.21 +0.03    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      49.167  41.995  45.511 -0.06 -0.04    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      50.380  41.285  45.878+35.07 +0.01    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      48.436  41.525  44.345+12.88 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      48.139  43.893  43.975+12.60 +0.06    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      48.038  45.309  44.533 +1.17 +0.08    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      42.496  47.586  45.541 -0.08 +0.01    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      43.346  48.435  46.497 +0.31 +0.17    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      41.494  49.886  49.181 +6.70 -0.19    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      40.134  48.612  47.685+99.99 -0.01    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      42.374  50.093  49.473 +2.17 +0.17    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.80e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.80e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.80e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.33 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.80e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.06 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.06 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      40.834  45.780  42.732+42.46 -0.15    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      41.843  44.755  43.212+34.26 -0.02    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      42.855  45.399  43.970 +3.06 +0.01    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      43.362  44.843  45.147 +9.52 +0.02    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.921  43.746  45.581 +8.52 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      44.435  45.560  45.915+89.54 +0.05    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      45.641  45.930  45.035+99.99 +0.09    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      43.879  46.766  46.690 +1.78 +0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.331  44.692  44.494+10.53 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.628  46.673  45.822+14.06 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.788  44.260  43.139+86.18 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.811  45.026  44.502+24.76 +0.02    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.389  45.813  42.948+99.99 -0.00    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      50.056  45.060  42.947 +7.95 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.995  43.552  43.006+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.869  45.499  44.149+99.99 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.734  43.190  44.277+36.41 +0.08    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.563  41.953  44.108+99.99 +0.09    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.553  44.327  44.673+43.00 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.262  40.940  44.795 +1.21 -0.04    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      52.674  41.889  43.193 +6.30 -0.09    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      53.447  40.665  43.066+76.28 +0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      53.065  43.023  42.371+16.28 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.527  44.253  44.378 +3.58 +0.07    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      51.735  44.372  45.676 +2.32 +0.05    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      46.633  47.670  45.610 +0.97 +0.09    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.375  46.745  46.808 +0.16 +0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      42.921  46.352  47.616 +4.32 -0.16    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      43.291  47.835  45.780+20.35 +0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      43.288  45.685  48.184 +1.29 +0.07    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +2.60e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +2.60e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +2.60e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.07 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +2.60e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +1.36 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +1.36 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      52.278  44.857  42.976 -0.26 -0.01    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      51.267  43.879  42.409+99.99 +0.01    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      50.464  43.362  43.458+98.83 -0.07    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      50.512  43.886  44.752+47.16 +0.06    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      51.291  44.836  45.031+39.98 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      49.642  43.308  45.830 +8.11 +0.02    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      48.160  43.253  45.422 +0.87 +0.02    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      50.167  41.952  46.328+17.24 +0.00    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.597  44.643  45.191 +8.32 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      47.368  42.632  46.487+11.06 +0.01    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      47.725  45.095  43.743+12.54 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      46.173  44.587  45.710+99.99 +0.04    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      44.953  44.073  44.440+51.67 -0.05    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      43.578  45.116  45.046+10.20 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      43.964  46.574  45.118+99.99 +0.02    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      43.150  44.721  46.445+41.48 +0.04    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      43.792  46.943  46.577 +1.92 +0.08    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      43.228  48.321  46.743+36.05 +0.14    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      42.941  45.943  47.207+15.84 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      43.947  49.190  47.306+99.99 -0.22    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      41.911  48.676  46.280 +0.68 -0.14    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      41.411  50.028  46.464+99.99 -0.02    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      41.040  47.718  45.618+38.88 -0.04    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      41.962  46.222  47.276+17.97 +0.17    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      43.105  45.836  48.208 +1.05 +0.11    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      47.086  41.677  46.264 +0.58 +0.01    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      47.921  42.420  47.318 -0.08 -0.06    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      51.446  42.091  46.868+10.79 +0.01    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      50.177  40.885  45.242 +3.59 +0.00    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      51.439  42.757  47.546 +0.18 -0.03    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.79e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +1.79e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +1.79e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.33 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +1.79e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      40.961  45.732  42.537+35.50 -0.14    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      41.818  44.705  43.253+38.03 -0.02    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      42.825  45.365  44.004 +2.58 +0.01    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      43.339  44.823  45.185 +9.81 +0.02    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      42.908  43.726  45.630 +8.60 -0.04    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      44.407  45.555  45.945+90.63 +0.05    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      45.609  45.927  45.059+99.99 +0.09    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      43.843  46.764  46.710 +1.89 +0.04    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      46.308  44.690  44.528+10.34 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      46.591  46.685  45.838+10.53 -0.02    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      45.766  44.242  43.177+87.65 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      47.785  45.036  44.530+22.06 +0.02    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      48.354  45.814  42.968+99.99 -0.00    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      50.027  45.075  42.971 +8.88 +0.01    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      49.979  43.568  43.043+99.99 +0.01    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      50.838  45.531  44.167+99.99 +0.02    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      50.723  43.222  44.316+36.35 +0.07    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      51.562  41.991  44.156+99.99 +0.09    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      51.534  44.369  44.701+38.88 -0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      51.271  40.982  44.853 +2.25 -0.04    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      52.672  41.928  43.240 +7.28 -0.09    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      53.455  40.709  43.122+48.27 +0.03    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      53.052  43.058  42.407+12.77 +0.02    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      52.508  44.302  44.405 +2.04 +0.06    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      51.717  44.425  45.703 +1.88 +0.05    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      46.588  47.681  45.617 +0.44 +0.08    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      46.339  46.764  46.823 +0.11 +0.07    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      42.890  46.350  47.642 +4.45 -0.16    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      43.245  47.820  45.791+19.16 +0.02    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      43.264  45.691  48.214 +1.26 +0.07    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 20
+Time taken for this run:   0.041s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +3.22e+03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  +3.22e+03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +3.22e+03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  +3.22e+03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.07 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.60 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.07 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: BEGIN_RES SER    64
+DOCKED: REMARK  2 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA   and  CB  
+DOCKED: REMARK    2  A    between atoms: CB   and  OG  
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA  SER    64      53.371  44.547  43.549 +2.73 +0.03    +0.268 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB  SER    64      51.995  44.362  42.939 +0.95 +0.01    +0.218 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  OG  SER    64      51.136  43.735  43.879 +7.04 -0.07    -0.319 OA 
+DOCKED: HETATM    4  C   SER    64      50.870  44.303  45.127+99.99 +0.06    +0.267 C  
+DOCKED: HETATM    5  O   SER    64      51.402  45.395  45.463+56.72 -0.03    -0.265 OA 
+DOCKED: HETATM    6  C   SER    64      49.952  43.606  46.090+20.36 +0.01    +0.145 C  
+DOCKED: HETATM    7  C   SER    64      48.596  43.252  45.457 +2.19 +0.02    +0.208 C  
+DOCKED: HETATM    8  C   SER    64      50.627  42.394  46.753 +8.85 -0.00    +0.129 C  
+DOCKED: HETATM    9  C   SER    64      47.833  44.499  45.049+20.27 +0.01    +0.029 C  
+DOCKED: HETATM   10  N   SER    64      47.765  42.527  46.422 +2.91 +0.00    -0.054 N  
+DOCKED: HETATM   11  C   SER    64      48.116  44.918  43.612+83.21 +0.00    +0.013 C  
+DOCKED: HETATM   12  C   SER    64      46.377  44.188  45.339+97.40 +0.03    +0.094 C  
+DOCKED: HETATM   13  S   SER    64      45.503  43.405  43.928+99.99 -0.03    -0.155 SA 
+DOCKED: HETATM   14  C   SER    64      43.878  44.183  44.239+17.77 +0.02    +0.075 C  
+DOCKED: HETATM   15  C   SER    64      43.971  45.690  44.276+99.99 +0.03    +0.059 C  
+DOCKED: HETATM   16  C   SER    64      43.302  43.762  45.576+48.27 +0.06    +0.248 C  
+DOCKED: HETATM   17  C   SER    64      43.492  46.069  45.662+16.58 +0.00    +0.278 C  
+DOCKED: HETATM   18  C   SER    64      42.664  47.318  45.645+56.72 -0.03    +0.250 C  
+DOCKED: HETATM   19  N   SER    64      42.746  44.946  46.213+95.15 +0.01    -0.061 N  
+DOCKED: HETATM   20  O   SER    64      43.104  48.328  46.257 +1.15 -0.16    -0.271 OA 
+DOCKED: HETATM   21  N   SER    64      41.401  47.396  44.958+39.50 +0.23    -0.359 N  
+DOCKED: HETATM   22  C   SER    64      40.636  48.631  44.971 +4.50 +0.01    +0.152 C  
+DOCKED: HETATM   23  C   SER    64      40.844  46.265  44.231+28.16 -0.11    +0.152 C  
+DOCKED: ATOM     24  HN1 SER    64      41.735  45.033  46.108+99.99 -0.13    +0.278 HD 
+DOCKED: ATOM     25  HN2 SER    64      42.757  44.907  47.233 +1.71 +0.11    +0.278 HD 
+DOCKED: ATOM     26  HN1 SER    64      47.705  41.529  46.220 +0.33 +0.04    +0.278 HD 
+DOCKED: ATOM     27  HN2 SER    64      48.200  42.455  47.342 +0.02 +0.01    +0.278 HD 
+DOCKED: HETATM   28  O   SER    64      51.750  42.796  47.478+12.31 +0.09    -0.395 OA 
+DOCKED: HETATM   29  C   SER    64      51.016  41.313  45.754+19.92 +0.01    +0.040 C  
+DOCKED: ATOM     30  HO  SER    64      51.507  43.472  48.100 +0.82 -0.03    +0.210 HD 
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: END_RES SER    64
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |  +1739.43 |  14 |  +1903.44 |   7 |#######
+   2 |  +1764.89 |   9 |  +1796.43 |   4 |####
+   3 |  +2012.72 |  11 |  +2012.72 |   1 |#
+   4 |  +2130.21 |  13 |  +2539.77 |   5 |#####
+   5 |  +2426.51 |  16 |  +2426.51 |   1 |#
+   6 |  +2905.62 |   5 |  +2905.62 |   1 |#
+   7 |  +2917.60 |  10 |  +2917.60 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     14    +1739.43      0.00     72.91           RANKING
+   1      2      2    +1764.67      0.05     72.92           RANKING
+   1      3     19    +1789.38      0.13     72.87           RANKING
+   1      4     17    +1797.96      0.17     72.87           RANKING
+   1      5      1    +1846.76      0.10     72.87           RANKING
+   1      6     12    +1925.53      0.20     72.89           RANKING
+   1      7      7    +2460.32      0.38     72.86           RANKING
+   2      1      9    +1764.89      0.00     73.46           RANKING
+   2      2     15    +1781.38      0.11     73.51           RANKING
+   2      3      6    +1799.10      0.20     73.49           RANKING
+   2      4      4    +1840.34      0.29     73.38           RANKING
+   3      1     11    +2012.72      0.00     73.92           RANKING
+   4      1     13    +2130.21      0.00     72.64           RANKING
+   4      2      8    +2311.66      0.40     72.50           RANKING
+   4      3      3    +2434.25      0.35     72.58           RANKING
+   4      4     18    +2598.90      0.37     72.52           RANKING
+   4      5     20    +3223.84      1.13     72.43           RANKING
+   5      1     16    +2426.51      0.00     71.37           RANKING
+   6      1      5    +2905.62      0.00     71.56           RANKING
+   7      1     10    +2917.60      0.00     71.17           RANKING
+
+Run time 0.833 sec
+Idle time 0.050 sec

@@ -18,14 +18,15 @@ class MD_Experiment(Experiment):
         self.rep_no : int = None
         self.traj_no : int = 0
         self.set_replicate(rep)
-        self.args = self.check_args()
+        if __name__ == "__main__":
+            self.args = self.check_args()
         self.set_mdrun_gmx()
         self.set_environs()
         self.config_files = []
         self.topology_files = []
         if pdbcode is not None:
             self.settings.pdbcode = pdbcode
-        self.generate_path_structure(name)
+        self.generate_path_structure(self.name)
 
     def set_mdrun_gmx(self, mpi_on: bool = None):
         if mpi_on is None:
@@ -46,60 +47,59 @@ class MD_Experiment(Experiment):
         """
         Checks the arguments for the trial.
         """
-        if __name__ == '__main__':
-            parser = argparse.ArgumentParser()
+        parser = argparse.ArgumentParser()
 
-            parser.add_argument("-R", "--replicate", 
-                                dest="replicate",
-                                help="Replicate number", type=int,
-                                default=0)
-            
-            ### TODO setup traj continuation
-            # parser.add_argument("-T", "--trajectory", 
-            #                     dest="traj_no", 
-            #                     help="Trajectory number", type=int)
-                                
-            
-            parser.add_argument("-P", "--pdbcode", 
-                                dest="pdbcode", 
-                                help="PDB code", type=str)
-            
-            parser.add_argument("-N", "--name",
-                                dest="name",
-                                help="Name of the trial", type=str)
-            
-            parser.add_argument("-S", "--suffix",
-                                dest="suffix",
-                                help="string for the trajectory files", type=str)
-            
-            parser.add_argument("-s", "--search",
-                                dest="search",
-                                help="search string for the top files", type=str)
+        parser.add_argument("-R", "--replicate", 
+                            dest="replicate",
+                            help="Replicate number", type=int,
+                            default=0)
+        
+        ### TODO setup traj continuation
+        # parser.add_argument("-T", "--trajectory", 
+        #                     dest="traj_no", 
+        #                     help="Trajectory number", type=int)
+                            
+        
+        parser.add_argument("-P", "--pdbcode", 
+                            dest="pdbcode", 
+                            help="PDB code", type=str)
+        
+        parser.add_argument("-N", "--name",
+                            dest="name",
+                            help="Name of the trial", type=str)
+        
+        parser.add_argument("-S", "--suffix",
+                            dest="suffix",
+                            help="string for the trajectory files", type=str)
+        
+        parser.add_argument("-s", "--search",
+                            dest="search",
+                            help="search string for the top files", type=str)
 
 
-            args = parser.parse_args()
+        args = parser.parse_args()
 
-            print("Arguments: ", args)
+        print("Arguments: ", args)
 
-            if args.replicate is not None:
-                self.set_replicate(args.replicate)
+        if args.replicate is not None:
+            self.set_replicate(args.replicate)
 
-            if args.traj_no is not None:
-                self.traj_no = args.traj_no
+        # if args.traj_no is not None:
+        #     self.traj_no = args.traj_no
 
-            if args.pdbcode is not None:
-                self.settings.pdbcode = args.pdbcode
+        if args.pdbcode is not None:
+            self.settings.pdbcode = args.pdbcode
 
-            if args.name is not None:
-                self.name = args.name
-            
-            if args.suffix is not None:
-                self.settings.suffix = args.suffix
+        if args.name is not None:
+            self.name = args.name
+        
+        if args.suffix is not None:
+            self.settings.suffix = args.suffix
 
-            if args.search is not None:
-                self.settings.search = args.search
+        if args.search is not None:
+            self.settings.search = args.search
 
-            return args
+        return args
     
     def create_directories(self):
         # we are using the ABC method here
@@ -251,7 +251,14 @@ class MD_Experiment(Experiment):
                                 self.settings.rep_directory + str(self.rep_no), 
                                 gro_name) 
 
-        grompp_command = ["gmx", "grompp", "-f", md_mdp, "-c", input_path, "-p", topo_path, "-o", tpr_path, "-r", input_path, "-v"]
+        grompp_command = ["gmx", "grompp", 
+                          "-f", md_mdp, 
+                          "-c", input_path, 
+                          "-p", topo_path, 
+                          "-o", tpr_path, 
+                          "-r", input_path, 
+                          "-maxwarn", "1",
+                          "-v"]
         subprocess.run(grompp_command, check=True)
         ### TODO add try except for gmx vs gmx_mpi
         mdrun_command = [self.gmx[0], "mdrun", "-v", "-deffnm", tpr_path.replace(".tpr","")]
