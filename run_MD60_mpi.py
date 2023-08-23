@@ -32,6 +32,7 @@ settings.gmx_mpi_on = True
 # %%
 # specify ARGS: -P, -R, -N 
 md = MD_Experiment(settings, 'APO_MD60_genvel', "1K55", 0)
+md.check_args()
 md.create_directory_structure(overwrite=True)
 md.run_experiment(search="APO")
 

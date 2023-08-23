@@ -67,6 +67,6 @@ for pdb in structures.PDBID:
             f.write(script_template)
             f.write(line)
 
-        !cat test.sh
+        subprocess.run(["cat", "test.sh"], check=True)
         
 

@@ -31,13 +31,14 @@ script_template = """#!/bin/bash
 
 # Generic options:
 
-#SBATCH --account=bdhbs10 # Run job under project <project>
-#SBATCH --time=24:0:0         # Run for a max of 24 hour
+#SBATCH --account=ec043 # Run job under project <project>
+#SBATCH --time=96:0:0         # Run for a max of 96 hour
 
 # Node resources:
 # (choose between 1-4 gpus per node)
 
 #SBATCH --partition=gpu    # Choose either "gpu" or "infer" node type
+#SBATCH --qos=gpu           
 #SBATCH --nodes=1          # Resources from a single nodet
 #SBATCH --gres=gpu:1       # One GPU per node (plus 25% of node CPU and RAM per GPU)
 #SBATCH -J gpu1
@@ -46,14 +47,14 @@ script_template = """#!/bin/bash
 
 nvidia-smi  # Display available gpu resources
 
-source ~/.bashrc
 
-module load hecbiosim
-module load gromacs/2023.1
+module load python/3.8.16-gpu
+# python includes pandas and matplotlib dont need to install anything else for now
 
-conda activate RIN_test
+module load gromacs/2022.1-gpu
 
-nvidia-smi
+
+nvidia-smi # this doenst seem to work here - to find out 
 
 
 """
