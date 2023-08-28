@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 settings = SBLSettings.GROMACS_Settings()
 settings.suffix = "APO_md"
 settings.search = "APO"
-settings.config = os.path.join(settings.config, "APO_MD60") 
+settings.config = os.path.join(settings.config, "APO_MD6test") 
 print(settings.config)
 settings.topology = os.path.join(settings.topology,settings.suffix.replace("_md","_npt"))
 print(settings.topology)
